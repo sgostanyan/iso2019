@@ -1,0 +1,14 @@
+uuid: 77ea582c-aedc-466e-b6e0-46b5bacb0ad9
+langcode: fr
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: cjVDbAE5BlopGrY-tfxsxMoyEibwBBNgdQwDdxOSkow
+id: marital_status
+label: 'Statut marital'
+category: Demographic
+likert: false
+options: "Single: Célibataire\r\nMarried: Marié\r\nDivorced: Divorcé\r\nWidowed: Veuf(ve)\n"
