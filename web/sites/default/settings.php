@@ -777,14 +777,5 @@ $settings['entity_update_backup'] = TRUE;
  if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
    include $app_root . '/' . $site_path . '/settings.local.php';
  }
+
 $config_directories['sync'] = '../config/sync';
-$databases['default']['default'] = array (
-  'database' => 'questionnaire',
-  'username' => 'root',
-  'password' => 'Sardev!',
-  'prefix' => '',
-  'host' => 'localhost',
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
