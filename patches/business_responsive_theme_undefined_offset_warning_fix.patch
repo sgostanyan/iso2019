@@ -5,4 +5,4 @@
    $current_url  = \Drupal::request()->getRequestUri();
    $current_path = explode("/", $current_url);
 -  $variables['current_path'] = $current_path[2];
-+  $variables['current_path'] = $current_path[2] ?? $current_path;
++  $variables['current_path'] = $current_path[2] ?? current($current_path);
