@@ -1,0 +1,8 @@
+--- web/themes/contrib/business_responsive_theme/business_responsive_theme.theme	2019-10-18 16:04:17.000000000 +0200
++++ web/themes/contrib/business_responsive_theme/business_responsive_theme.theme	2019-10-18 16:08:23.000000000 +0200
+@@ -120,7 +120,7 @@
+   //To get the current URL
+   $current_url  = \Drupal::request()->getRequestUri();
+   $current_path = explode("/", $current_url);
+-  $variables['current_path'] = $current_path[2];
++  $variables['current_path'] = $current_path[2] ?? $current_path;
