@@ -7,7 +7,6 @@ body {
   background-image: url("../images/bg.jpg");
   background-size: cover;
   background-position-x: center;
-  background-position-y: top;
 }
 
 .navbar-default {
@@ -164,4 +163,8 @@ body {
 #fields-container {
   max-width: 90%;
   margin: auto;
+}
+
+#edit-not-eligible, #edit-eligible {
+  display: none;
 }
