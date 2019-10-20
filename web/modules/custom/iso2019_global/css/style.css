@@ -1,0 +1,121 @@
+@font-face {
+  font-family: "House A Rama League Night";
+  src: url('../fonts/HouseARamaLeagueNight.ttf');
+}
+
+body {
+  /*background-color: #afe7ed!important;*/
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+}
+
+.navbar-default {
+  background-color: #272727!important;
+}
+
+#edit-main-form, .content_layout {
+  width: 100%;
+}
+
+#edit-top {
+  padding-top: 4em;
+}
+
+.iso2019-form-chapo {
+  text-align: center;
+}
+
+.iso2019-form-chapo p, .iso2019-form-chapo h1 {
+  font-family: 'House A Rama League Night', 'Comic sans MS', 'serif';
+  font-size: 5rem;
+  display: inline-block;
+  color: #333;
+}
+
+.form-title-wrapper {
+  text-align: center;
+}
+
+.iso2019-form-title {
+  background: black;
+  color: #fff;
+  position: relative;
+  padding: 15px 40px;
+  display: inline-block;
+  font-family: inherit;
+  z-index: 0;
+  top: 20px;
+}
+
+.iso2019-form-title:before {
+  content: " ";
+  background: black;
+  position: absolute;
+  top:0;
+  left:-10px;
+  right:-10px;
+  bottom:0;
+  z-index: -1;
+  transform: skewX(-15deg);
+}
+
+.iso2019-forms {
+  background-color: #f5f9fa;
+}
+
+#edit-top, #edit-room-type-section {
+  text-align: center;
+}
+
+.form-item-county, .form-item-housing-type {
+  display: inline-block;
+}
+
+.container-inline.form-item-housing-type, #edit-other-room{
+  margin-left: 5em!important;
+}
+
+#edit-attic-section {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+#edit-attic-section, #edit-other-room {
+  background-color: #f1f1f1;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 15px;
+}
+
+#edit-attic-type > div {
+  margin-left: 2em;
+}
+
+#edit-attic-type > div:nth-child(2) {
+  margin-right: 2em;
+}
+
+#edit-region {
+  display: block;
+  margin-top: 1em;
+}
+
+.form-item-region {
+  position: relative;
+}
+
+.edit-region-label {
+  position: absolute;
+  left: 2em;
+}
+
+#edit-other-room > div {
+  display: inline-block;
+  margin-left: 2em;
+}
+
+#edit-other-room > div:nth-child(3) {
+  margin-right: 2em;
+}
+
+

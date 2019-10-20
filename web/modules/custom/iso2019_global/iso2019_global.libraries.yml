@@ -7,9 +7,10 @@ iso2019:
       css/bootstrap-grid.min.css: {}
       css/bootstrap-reboot.min.css: {}
   js:
-    js/script.js: {}
+    js/popper.min.js: {}
     js/bootstrap.bundle.min.js: {}
     js/bootstrap.min.js: {}
+    js/script.js: {}
 
   dependencies:
     - core/jquery

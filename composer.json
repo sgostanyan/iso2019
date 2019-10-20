@@ -26,6 +26,8 @@
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
         "drupal/devel": "^2.1",
+        "drupal/field_formatter_class": "^1.1",
+        "drupal/field_group": "^1.0",
         "drupal/pathauto": "^1.4",
         "drupal/telephone_validation": "^2.2",
         "drupal/webform": "^5.4",

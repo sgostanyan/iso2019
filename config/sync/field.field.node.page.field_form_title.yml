@@ -1,0 +1,19 @@
+uuid: d14e4c1c-3d6a-4ab2-a565-91ec51da2b4c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_form_title
+    - node.type.page
+id: node.page.field_form_title
+field_name: field_form_title
+entity_type: node
+bundle: page
+label: 'Titre formulaire'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

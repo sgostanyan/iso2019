@@ -1,0 +1,24 @@
+uuid: 1045fab6-622f-462a-8f37-33a537bdfd49
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_chapo
+    - node.type.page
+  module:
+    - text
+id: node.page.field_chapo
+field_name: field_chapo
+entity_type: node
+bundle: page
+label: Chapô
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: "<p>Isolations à&nbsp;1€ : mon logement est-il éligible ?</p>\r\n"
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long
