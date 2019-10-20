@@ -10,7 +10,7 @@ body {
 }
 
 .navbar-default {
-  background-color: #272727!important;
+  background-color: #272727 !important;
 }
 
 #edit-main-form, .content_layout {
@@ -51,10 +51,10 @@ body {
   content: " ";
   background: black;
   position: absolute;
-  top:0;
-  left:-10px;
-  right:-10px;
-  bottom:0;
+  top: 0;
+  left: -10px;
+  right: -10px;
+  bottom: 0;
   z-index: -1;
   transform: skewX(-15deg);
 }
@@ -67,12 +67,12 @@ body {
   text-align: center;
 }
 
-.form-item-county, .form-item-housing-type {
+.form-item-county, .form-item-housing-type, #edit-fiscal-brackets-container {
   display: inline-block;
 }
 
-.container-inline.form-item-housing-type, #edit-other-room{
-  margin-left: 5em!important;
+.container-inline.form-item-housing-type {
+  margin-left: 5em !important;
 }
 
 #edit-attic-section {
@@ -87,7 +87,7 @@ body {
   border-radius: 15px;
 }
 
-#edit-attic-type > div {
+#edit-attic-type > div, #edit-number-person > div {
   margin-left: 2em;
 }
 
@@ -95,16 +95,39 @@ body {
   margin-right: 2em;
 }
 
+#edit-revenus-fiscaux {
+  max-width: fit-content;
+}
+
 #edit-region {
   display: block;
   margin-top: 1em;
 }
 
-.form-item-region {
+#edit-number-person {
+  top: 2em;
+  left: -3.5em;
+  position: relative;
+  width: 50%;
+}
+
+#edit-fiscal-brackets {
+  left: 5.8em;
+  position: relative;
+  width: 50%;
+}
+
+.form-item-region, .form-item-number-person, .form-item-fiscal-brackets {
   position: relative;
 }
 
-.edit-region-label {
+.form-item-fiscal-brackets {
+  left: -3.4em;
+  top: 1em;
+  padding-bottom: 2em;
+}
+
+.edit-region-label, .edit-number-person-label {
   position: absolute;
   left: 2em;
 }
