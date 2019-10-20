@@ -4,9 +4,10 @@
 }
 
 body {
-  /*background-color: #afe7ed!important;*/
   background-image: url("../images/bg.jpg");
   background-size: cover;
+  background-position-x: center;
+  background-position-y: top;
 }
 
 .navbar-default {
@@ -61,6 +62,7 @@ body {
 
 .iso2019-forms {
   background-color: #f5f9fa;
+  box-shadow: 0px 0px 0px 6px rgba(0,0,0,0.4);
 }
 
 #edit-top, #edit-room-type-section {
@@ -141,4 +143,25 @@ body {
   margin-right: 2em;
 }
 
+#edit-more-infos-container {
+  background-color: #f1f1f1;
+  vertical-align: top;
+  border-radius: 15px;
+  padding: 1em;
+  margin-top: 1.5em;
+  left: 16.5em;
+  position: relative;
+  width: fit-content;
+}
 
+.form-item-heating-type {
+  display: block;
+  margin-left: auto;
+  position: relative;
+  left: -2.5em;
+}
+
+#fields-container {
+  max-width: 90%;
+  margin: auto;
+}
