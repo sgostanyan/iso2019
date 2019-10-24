@@ -13,6 +13,38 @@ body {
   background-color: #272727 !important;
 }
 
+.iso2019-form-chapo p, .iso2019-form-chapo h1 {
+  font-family: 'House A Rama League Night', 'Comic sans MS', 'serif';
+  font-size: 5rem;
+  display: inline-block;
+  color: #333;
+}
+
+.iso2019-form-title {
+  background: black;
+  color: #fff;
+  position: relative;
+  padding: 15px 40px;
+  display: inline-block;
+  font-family: inherit;
+  z-index: 0;
+  top: 20px;
+}
+
+.iso2019-form-title:before {
+  content: " ";
+  background: black;
+  position: absolute;
+  top: 0;
+  left: -10px;
+  right: -10px;
+  bottom: 0;
+  z-index: -1;
+  transform: skewX(-15deg);
+}
+
+
+/*
 #edit-main-form, .content_layout {
   width: 100%;
 }
@@ -25,12 +57,7 @@ body {
   text-align: center;
 }
 
-.iso2019-form-chapo p, .iso2019-form-chapo h1 {
-  font-family: 'House A Rama League Night', 'Comic sans MS', 'serif';
-  font-size: 5rem;
-  display: inline-block;
-  color: #333;
-}
+
 
 .form-title-wrapper {
   text-align: center;
@@ -168,3 +195,4 @@ body {
 #edit-not-eligible, #edit-eligible {
   display: none;
 }
+*/
