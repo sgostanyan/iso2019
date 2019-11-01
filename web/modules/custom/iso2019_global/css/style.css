@@ -13,6 +13,10 @@ body {
   background-color: #272727 !important;
 }
 
+.iso2019-form-chapo {
+  text-align: center;
+}
+
 .iso2019-form-chapo p, .iso2019-form-chapo h1 {
   font-family: 'House A Rama League Night', 'Comic sans MS', 'serif';
   font-size: 5rem;
@@ -20,20 +24,31 @@ body {
   color: #333;
 }
 
+.iso2019-forms {
+  background-color: white;
+  box-shadow: 0px 0px 0px 6px rgba(0, 0, 0, 0.4);
+}
+
+.form-title-wrapper {
+  text-align: center;
+}
+
 .iso2019-form-title {
-  background: black;
+  background: #e30613;
   color: #fff;
   position: relative;
-  padding: 15px 40px;
+  padding: 15px 35px;
   display: inline-block;
-  font-family: inherit;
+  font-family: Sana Sans Alt;
+  font-size: x-large;
+  font-weight: bold;
   z-index: 0;
-  top: 20px;
+  top: 0.75em;
 }
 
 .iso2019-form-title:before {
   content: " ";
-  background: black;
+  background: #e30613;
   position: absolute;
   top: 0;
   left: -10px;
@@ -43,6 +58,174 @@ body {
   transform: skewX(-15deg);
 }
 
+#wrapper .layout {
+  display: flex;
+  flex-direction: column;
+}
+
+#edit-top {
+  text-align: center;
+  padding-top: 5em;
+}
+
+#edit-middle {
+  text-align: center;
+  margin-top: 3em;
+}
+
+#edit-bottom, #edit-next-step-button {
+  margin-top: 3em !important;
+  text-align: center;
+  display: block;
+}
+
+#edit-attic-section, #edit-other-room, #edit-contact {
+  background-color: #f5f9fa;
+  border-radius: 5px;
+  padding: 1em;
+}
+
+#edit-room-type-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#edit-attic-type--wrapper {
+  align-items: flex-start;
+  margin-top: 1em;
+}
+
+label {
+  font-family: serif;
+  font-weight: bold!important;
+  font-size: medium!important;
+}
+
+#edit-housing-type label, #edit-region label {
+  font-weight: initial!important;
+}
+
+#edit-attic-section {
+  margin-right: 5em;
+}
+
+.form-item {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  display: inline-block;
+}
+
+.form-item-county {
+  margin-right: 5em;
+}
+
+#edit-other-room .form-item {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+#edit-revenus-fiscaux {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#edit-revenus-fiscaux input#edit-fiscal-brackets,
+#edit-revenus-fiscaux input#edit-number-person {
+  width: 60px;
+  display: inline-block;
+}
+
+.form-item-total-area {
+  margin-right: 5em;
+}
+
+.js-form-item-number-person {
+  margin-top: 1.5em!important;
+}
+
+.js-form-item-region, .form-item-fiscal-brackets {
+  margin-top: 1em!important;
+}
+
+#edit-next-step-button button {
+  background: #8aba2e;
+  border-radius: 50px;
+  font-size: 14px;
+  border-color: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1;
+  padding: 10px 45px;
+  cursor: pointer;
+  display: inline-block;
+  transition: .2s ease-out;
+  font-family: Sana Sans Alt,Arial,sans-serif;
+}
+
+#edit-message {
+  text-align: center;
+}
+
+#edit-not-eligible, #edit-eligible {
+  display: none;
+  font-family: Sana Sans Alt,Arial,sans-serif;
+  font-weight: bold;
+  font-size: large;
+  color: red;
+}
+
+.Tooltip {
+  vertical-align: text-bottom;
+  margin-left: 5px;
+}
+
+#edit-contact {
+  margin-left: 25%;
+  margin-right: 25%;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  align-items: flex-start;
+  padding: 2em;
+  padding-left: 8em;
+}
+
+#edit-contact input {
+  display: inline-block;
+}
+
+.form-item-lastname-firstname, .form-item-email, .form-item-telephone {
+  margin-top: 1em!important;
+}
+
+.form-item-lastname-firstname input, .form-item-email input, .form-item-telephone input {
+  width: 200px;
+}
+
+#edit-actions {
+  text-align: center;
+  padding-bottom: 2em;
+  padding-top: 1em;
+}
+
+#edit-actions-submit {
+  background: #8aba2e;
+  border-radius: 50px;
+  font-size: 14px;
+  border-color: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1;
+  padding: 10px 45px;
+  cursor: pointer;
+  display: inline-block;
+  transition: .2s ease-out;
+  font-family: Sana Sans Alt,Arial,sans-serif;
+}
 
 /*
 #edit-main-form, .content_layout {
@@ -53,43 +236,7 @@ body {
   padding-top: 4em;
 }
 
-.iso2019-form-chapo {
-  text-align: center;
-}
 
-
-
-.form-title-wrapper {
-  text-align: center;
-}
-
-.iso2019-form-title {
-  background: black;
-  color: #fff;
-  position: relative;
-  padding: 15px 40px;
-  display: inline-block;
-  font-family: inherit;
-  z-index: 0;
-  top: 20px;
-}
-
-.iso2019-form-title:before {
-  content: " ";
-  background: black;
-  position: absolute;
-  top: 0;
-  left: -10px;
-  right: -10px;
-  bottom: 0;
-  z-index: -1;
-  transform: skewX(-15deg);
-}
-
-.iso2019-forms {
-  background-color: #f5f9fa;
-  box-shadow: 0px 0px 0px 6px rgba(0,0,0,0.4);
-}
 
 #edit-top, #edit-room-type-section {
   text-align: center;

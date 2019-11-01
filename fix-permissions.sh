@@ -70,38 +70,19 @@ if [ -z "${drupal_user}" ] || [[ $(id -un "${drupal_user}" 2> /dev/null) != "${d
   exit 1
 fi
 
-cd $drupal_root_project_path
 printf "Changing ownership of all contents of "${drupal_root_project_path}":\n user => "${drupal_user}" \t group => "${httpd_group}"\n"
-chown -R ${drupal_user}:${httpd_group} ${drupal_root_project_path}
+chown -R ${drupal_user}:${httpd_group} ${drupal_root_project_path};
 
-printf "Changing permissions of all directories inside "${drupal_root_project_path}" to "rwxr-x---"...\n"
-#find . -type d -exec chmod u=rwx,g=rx,o= '{}' \;
-chmod -R 750 ${drupal_root_project_path}
+printf "Changing permissions of all directories inside "${drupal_root_project_path}" to "rwxr-xr-x"...\n"
+chmod -R 755 ${drupal_root_project_path};
 
-#cd $drupal_web_path
-#printf "Changing ownership of all contents of "${drupal_web_path}":\n user => "${drupal_user}" \t group => "${httpd_group}"\n"
-#chown -R ${drupal_user}:${httpd_group} .
+printf "Changing permissions of "sites directories" directories in "${drupal_web_path}/sites/" to "r-xr-xr-x"...\n"
+chmod 555 ${drupal_web_path}/sites/*;
 
-#printf "Changing permissions of all directories inside "${drupal_web_path}" to "rwxr-x---"...\n"
-#find . -type d -exec chmod u=rwx,g=rx,o= '{}' \;
-
-#printf "Changing permissions of all files inside "${drupal_web_path}" to "rw-r-----"...\n"
-#find . -type f -exec chmod u=rw,g=r,o= '{}' \;
-
-#printf "Changing permissions of "files" directories in "${drupal_web_path}/sites" to "r--r-----"...\n"
-#cd sites
-#find . -type d -name files -exec chmod ug=r,o= '{}' \;
-
-printf "Changing permissions of "settings files" directories in "${drupal_web_path}/sites/*/se*" to "r--r-----"...\n"
-find ${drupal_web_path}/sites/*/se* -type f -exec chmod 440 '{}' \;
+printf "Changing permissions of "settings files" directories in "${drupal_web_path}/sites/*/" to "r--r-----"...\n"
+chmod 440 ${drupal_web_path}/sites/*/se*;
 
 printf "Changing permissions of all files inside all "files" directories in "${drupal_web_path}/sites/*/files" to "rwxrwxrwx"...\n"
-chmod -R 777 ${drupal_web_path}/sites/*/files
+chmod -R 777 ${drupal_web_path}/sites/*/files;
 
-#printf "Changing permissions of all files inside all "files" directories in "${drupal_web_path}/sites" to "rw-rw----"...\n"
-#printf "Changing permissions of all directories inside all "files" directories in "${drupal_web_path}/sites" to "rwxrwx---"...\n"
-#for x in ./*/files; do
-#  find ${x} -type d -exec chmod ug=rwx,o= '{}' \;
-#  find ${x} -type f -exec chmod ug=rw,o= '{}' \;
-#done
 echo "Done setting proper permissions on files and directories"
