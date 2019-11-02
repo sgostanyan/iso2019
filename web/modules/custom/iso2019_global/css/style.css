@@ -90,6 +90,10 @@ select#edit-county, #edit-total-area, #edit-heating-type {
   background: #fcfcfc url('/modules/custom/iso2019_global/images/icon-select.jpg') no-repeat right 15px top 50%;
 }
 
+#edit-heating-type {
+  padding-right: 40px;
+}
+
 #edit-attic-section, #edit-other-room, #edit-contact {
   background-color: #f5f9fa;
   border-radius: 5px;
