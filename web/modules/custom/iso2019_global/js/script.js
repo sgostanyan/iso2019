@@ -8,6 +8,11 @@
      $('.next-step').click(function(e){
        e.preventDefault();
      });
+
+
+     // Functions
+
+
     }
   };
 })(jQuery, Drupal);

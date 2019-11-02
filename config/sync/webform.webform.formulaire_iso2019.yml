@@ -16,8 +16,8 @@ elements: "main_form:\n  '#type': container\n  '#title': Formulaire\n  '#title_d
 css: ''
 javascript: ''
 settings:
-  ajax: false
-  ajax_scroll_top: ''
+  ajax: true
+  ajax_scroll_top: form
   ajax_progress_type: ''
   ajax_effect: ''
   ajax_speed: null
