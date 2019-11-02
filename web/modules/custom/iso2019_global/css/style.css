@@ -79,6 +79,17 @@ body {
   display: block;
 }
 
+select#edit-county, #edit-total-area, #edit-heating-type {
+  padding: 5px 15px;
+  font-size: 14px;
+  box-shadow: none;
+  -webkit-appearance: none;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  overflow: hidden;
+  background: #fcfcfc url('/modules/custom/iso2019_global/images/icon-select.jpg') no-repeat right 15px top 50%;
+}
+
 #edit-attic-section, #edit-other-room, #edit-contact {
   background-color: #f5f9fa;
   border-radius: 5px;
