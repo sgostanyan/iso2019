@@ -149,7 +149,7 @@ label {
   margin-top: 1em!important;
 }
 
-#edit-next-step-button button {
+#edit-next-step-button span {
   background: #8aba2e;
   border-radius: 50px;
   font-size: 14px;
@@ -225,6 +225,14 @@ label {
   display: inline-block;
   transition: .2s ease-out;
   font-family: Sana Sans Alt,Arial,sans-serif;
+}
+
+#edit-next-step-button {
+  padding-bottom: 1em!important;
+}
+
+#edit-contact {
+  /*display: none;*/
 }
 
 /*
