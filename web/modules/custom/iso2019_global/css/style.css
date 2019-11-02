@@ -137,6 +137,10 @@ label {
   display: inline-block;
 }
 
+#edit-revenus-fiscaux input#edit-fiscal-brackets {
+  width: 80px;
+}
+
 .form-item-total-area {
   margin-right: 5em;
 }
@@ -231,8 +235,8 @@ label {
   padding-bottom: 1em!important;
 }
 
-#edit-contact {
-  /*display: none;*/
+#edit-contact, #edit-actions-submit {
+  display: none;
 }
 
 /*

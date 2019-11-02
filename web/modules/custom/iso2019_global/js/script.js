@@ -96,6 +96,8 @@
         $('.field-requ-mess').remove();
         $('#edit-not-eligible, #edit-eligible').hide();
         status ? $('#edit-eligible').show() : $('#edit-not-eligible').show();
+        status ? $('#edit-contact').show() : $('#edit-contact').hide();
+        status ? $('#edit-actions-submit').show() : $('#edit-actions-submit').hide();
       }
 
       function formatData(formData) {
@@ -138,16 +140,12 @@
         };
 
         if (numberPersons >= 1 && numberPersons <= 5) {
-          if (income > incomeCeiling[numberPersons][region]) {
-            return false;
-          }
-          else {
-            return true;
-          }
+         return  income > incomeCeiling[numberPersons][region] ? false : true;
         }
-
+        else if (numberPersons > 5) {
+          return income > incomeCeiling[5][region] + ((numberPersons - 5) * majoration[region]) ? false : true;
+        }
       }
-
     }
   };
 })(jQuery, Drupal);
