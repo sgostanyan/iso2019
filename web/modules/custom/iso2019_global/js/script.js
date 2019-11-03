@@ -2,11 +2,23 @@
   Drupal.behaviors.iso2019Behavior = {
     attach: function (context, settings) {
 
+      // Add tooltip.
       $('.form-item-attics label').once().append('<span data-toggle="tooltip" data-placement="right" title="Les combles perdus sont des combles non aménageables et non habitables." class="Tooltip"><img src="modules/custom/iso2019_global/images/infobulle.png" alt=""></span>');
       $('.Tooltip').tooltip();
 
+      // Click on next step.
       $('.next-step').once().click(function () {
         checkDataValidation();
+      });
+
+      // Phone field validate.
+      $('#edit-telephone').once().change(function () {
+        $('.phone-mess').remove();
+        if (!validatePhoneNumber($(this).val())) {
+          $('.form-item-telephone').append('<div class="phone-mess" style="color: red; margin-top: 0.5em;">Vous devez entrer un numéro de téléphone valide</div>');
+          $('#edit-actions-submit').attr('disabled');
+        }
+        $('#edit-actions-submit').removeAttr('disabled');
       });
 
       // Functions
@@ -97,6 +109,9 @@
                   }
                 }
               }
+              else {
+                $('#edit-attic-section input').removeAttr('required');
+              }
 
               // Si autres type de pièce.
               if (data.keys.indexOf('garage') !== -1 ||
@@ -122,7 +137,7 @@
         $('.field-requ-mess').remove();
         $('#edit-not-eligible, #edit-eligible').hide();
         status ? $('#edit-eligible').show() : $('#edit-not-eligible').show();
-        status ? $('#edit-contact').show() : $('#edit-contact').hide();
+        status ? $('#edit-contact').css('display', 'flex') : $('#edit-contact').hide();
         status ? $('#edit-actions-submit').show() : $('#edit-actions-submit').hide();
       }
 
@@ -172,6 +187,12 @@
           return income > incomeCeiling[5][region] + ((numberPersons - 5) * majoration[region]) ? false : true;
         }
       }
+
+      function validatePhoneNumber(number) {
+        var reg = new RegExp("^0[1-9]([-. ]?[0-9]{2}){4}$");
+        return reg.test(number);
+      }
+
     }
   };
 })(jQuery, Drupal);
