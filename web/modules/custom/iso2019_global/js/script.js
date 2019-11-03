@@ -40,12 +40,17 @@
 
         // Type de logement.
         if (data.keys.indexOf('housing_type') !== -1) {
-          if (formData[data.indexKeys.housing_type].value == 'appartment') {
+
+          // Si logement appartement.
+          if (formData[data.indexKeys.housing_type].value === 'appartment') {
             eligible(false);
             return;
           }
+
+          // Si logement maison.
           else {
-            // Type de combles.
+
+            // Si pas de type de pièce choisis.
             if (data.keys.indexOf('attics') === -1 &&
               data.keys.indexOf('garage') === -1 &&
               data.keys.indexOf('cave') === -1 &&
@@ -53,31 +58,52 @@
               messenger('Vous devez choisir un type de pièce');
               return;
             }
+            // Si type de pièce choisis.
             else {
-              if (data.keys.indexOf('attics') !== -1 && data.keys.indexOf('attic_type') === -1) {
-                messenger('Vous devez choisir un type de comble');
-                return;
-              }
-              else if (formData[data.indexKeys.attic_type].value === 'inhabited') {
-                eligible(false);
-                return;
-              }
-              else if (formData[data.indexKeys.attic_type].value === 'lost') {
-                if (data.keys.indexOf('region') === -1 ||
-                  formData[data.indexKeys.number_person].value === '' ||
-                  formData[data.indexKeys.fiscal_brackets].value === '') {
-                  messenger('Vous devez renseigner tous les champs pour vos combles perdus');
+
+              // Si combles choisis.
+              if (data.keys.indexOf('attics') !== -1) {
+
+                // Si pas de type de combles.
+                if (data.keys.indexOf('attic_type') === -1) {
+                  messenger('Vous devez choisir un type de comble');
                   return;
                 }
-                else {
-                  var region = formData[data.indexKeys.region].value;
-                  var numbPerson = formData[data.indexKeys.number_person].value;
-                  var fiscalBrackets = formData[data.indexKeys.fiscal_brackets].value;
-                  var result = calculateFiscalEligibility(region, numbPerson, fiscalBrackets);
-                  eligible(result);
+
+                // Si type de combles aménagés.
+                else if (formData[data.indexKeys.attic_type].value === 'inhabited') {
+                  eligible(false);
+                  return;
+                }
+
+                // Si type de combles perdus.
+                else if (formData[data.indexKeys.attic_type].value === 'lost') {
+
+                  // Si pas de renseignement sur les revenus fiscaux.
+                  if (data.keys.indexOf('region') === -1 ||
+                    formData[data.indexKeys.number_person].value === '' ||
+                    formData[data.indexKeys.fiscal_brackets].value === '') {
+                    messenger('Vous devez renseigner tous les champs pour vos combles perdus');
+                    return;
+                  }
+
+                  // Calcul de l'éligibilité.
+                  else {
+                    var region = formData[data.indexKeys.region].value;
+                    var numbPerson = formData[data.indexKeys.number_person].value;
+                    var fiscalBrackets = formData[data.indexKeys.fiscal_brackets].value;
+                    var result = calculateFiscalEligibility(region, numbPerson, fiscalBrackets);
+                    eligible(result);
+                  }
                 }
               }
 
+              // Si autres type de pièce.
+              if (data.keys.indexOf('garage') !== -1 ||
+                data.keys.indexOf('cave') !== -1 ||
+                data.keys.indexOf('crawl_space') !== -1) {
+                eligible(true);
+              }
             }
           }
         }
@@ -140,7 +166,7 @@
         };
 
         if (numberPersons >= 1 && numberPersons <= 5) {
-         return  income > incomeCeiling[numberPersons][region] ? false : true;
+          return income > incomeCeiling[numberPersons][region] ? false : true;
         }
         else if (numberPersons > 5) {
           return income > incomeCeiling[5][region] + ((numberPersons - 5) * majoration[region]) ? false : true;
