@@ -265,6 +265,10 @@ label {
 
 @media screen and (max-width: 991px) {
 
+  .iso2019-form-chapo p, .iso2019-form-chapo h1 {
+    font-size: 4rem;
+  }
+
   .form-item-county {
     margin-right: 2.6em;
   }
@@ -365,7 +369,7 @@ label {
   }
 
   #edit-number-person, #edit-fiscal-brackets {
-    width: 95%!important;
+    width: 95% !important;
   }
 
   .form-item-number-person, .form-item-fiscal-brackets {
@@ -400,6 +404,10 @@ label {
 }
 
 @media screen and (max-width: 440px) {
+  .iso2019-form-chapo p, .iso2019-form-chapo h1 {
+    font-size: 3rem;
+  }
+
   #edit-contact {
     padding-left: 5%;
   }
@@ -506,119 +514,14 @@ label {
 
 }
 
-/*
-#edit-main-form, .content_layout {
-  width: 100%;
+@media screen and (max-width: 360px) {
+  .iso2019-form-chapo p, .iso2019-form-chapo h1 {
+    font-size: 2.8rem;
+  }
 }
 
-#edit-top {
-  padding-top: 4em;
+@media screen and (max-width: 320px) {
+  .iso2019-form-chapo p, .iso2019-form-chapo h1 {
+    font-size: 2.7rem;
+  }
 }
-
-
-
-#edit-top, #edit-room-type-section {
-  text-align: center;
-}
-
-.form-item-county, .form-item-housing-type, #edit-fiscal-brackets-container {
-  display: inline-block;
-}
-
-.container-inline.form-item-housing-type {
-  margin-left: 5em !important;
-}
-
-#edit-attic-section {
-  margin-left: 2em;
-  margin-right: 2em;
-}
-
-#edit-attic-section, #edit-other-room {
-  background-color: #f1f1f1;
-  display: inline-block;
-  vertical-align: top;
-  border-radius: 15px;
-}
-
-#edit-attic-type > div, #edit-number-person > div {
-  margin-left: 2em;
-}
-
-#edit-attic-type > div:nth-child(2) {
-  margin-right: 2em;
-}
-
-#edit-revenus-fiscaux {
-  max-width: fit-content;
-}
-
-#edit-region {
-  display: block;
-  margin-top: 1em;
-}
-
-#edit-number-person {
-  top: 2em;
-  left: -3.5em;
-  position: relative;
-  width: 50%;
-}
-
-#edit-fiscal-brackets {
-  left: 5.8em;
-  position: relative;
-  width: 50%;
-}
-
-.form-item-region, .form-item-number-person, .form-item-fiscal-brackets {
-  position: relative;
-}
-
-.form-item-fiscal-brackets {
-  left: -3.4em;
-  top: 1em;
-  padding-bottom: 2em;
-}
-
-.edit-region-label, .edit-number-person-label {
-  position: absolute;
-  left: 2em;
-}
-
-#edit-other-room > div {
-  display: inline-block;
-  margin-left: 2em;
-}
-
-#edit-other-room > div:nth-child(3) {
-  margin-right: 2em;
-}
-
-#edit-more-infos-container {
-  background-color: #f1f1f1;
-  vertical-align: top;
-  border-radius: 15px;
-  padding: 1em;
-  margin-top: 1.5em;
-  left: 16.5em;
-  position: relative;
-  width: fit-content;
-}
-
-.form-item-heating-type {
-  display: block;
-  margin-left: auto;
-  position: relative;
-  left: -2.5em;
-}
-
-#fields-container {
-  max-width: 90%;
-  margin: auto;
-}
-
-#edit-not-eligible, #edit-eligible {
-  display: none;
-}
-*/
