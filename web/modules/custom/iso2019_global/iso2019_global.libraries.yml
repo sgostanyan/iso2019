@@ -3,13 +3,13 @@ iso2019:
   css:
     theme:
       css/style.css: {}
-      css/bootstrap.min.css: {}
-      css/bootstrap-grid.min.css: {}
-      css/bootstrap-reboot.min.css: {}
+     # css/bootstrap.min.css: {}
+    #  css/bootstrap-grid.min.css: {}
+    #  css/bootstrap-reboot.min.css: {}
   js:
-    js/popper.min.js: {}
-    js/bootstrap.bundle.min.js: {}
-    js/bootstrap.min.js: {}
+   # js/popper.min.js: {}
+   # js/bootstrap.bundle.min.js: {}
+   # js/bootstrap.min.js: {}
     js/script.js: {}
 
   dependencies:
