@@ -113,12 +113,12 @@ select#edit-county, #edit-total-area, #edit-heating-type {
 
 label {
   font-family: serif;
-  font-weight: bold!important;
-  font-size: medium!important;
+  font-weight: bold !important;
+  font-size: medium !important;
 }
 
 #edit-housing-type label, #edit-region label {
-  font-weight: initial!important;
+  font-weight: initial !important;
 }
 
 #edit-attic-section {
@@ -161,11 +161,11 @@ label {
 }
 
 .js-form-item-number-person {
-  margin-top: 1.5em!important;
+  margin-top: 1.5em !important;
 }
 
 .js-form-item-region, .form-item-fiscal-brackets {
-  margin-top: 1em!important;
+  margin-top: 1em !important;
 }
 
 #edit-next-step-button span {
@@ -181,7 +181,7 @@ label {
   cursor: pointer;
   display: inline-block;
   transition: .2s ease-out;
-  font-family: Sana Sans Alt,Arial,sans-serif;
+  font-family: Sana Sans Alt, Arial, sans-serif;
 }
 
 #edit-message {
@@ -190,7 +190,7 @@ label {
 
 #edit-not-eligible, #edit-eligible {
   display: none;
-  font-family: Sana Sans Alt,Arial,sans-serif;
+  font-family: Sana Sans Alt, Arial, sans-serif;
   font-weight: bold;
   font-size: large;
   color: red;
@@ -217,7 +217,7 @@ label {
 }
 
 .form-item-lastname-firstname, .form-item-email, .form-item-telephone {
-  margin-top: 1em!important;
+  margin-top: 1em !important;
 }
 
 .form-item-lastname-firstname input, .form-item-email input, .form-item-telephone input {
@@ -243,15 +243,267 @@ label {
   cursor: pointer;
   display: inline-block;
   transition: .2s ease-out;
-  font-family: Sana Sans Alt,Arial,sans-serif;
+  font-family: Sana Sans Alt, Arial, sans-serif;
 }
 
 #edit-next-step-button {
-  padding-bottom: 1em!important;
+  padding-bottom: 1em !important;
 }
 
 #edit-contact, #edit-actions-submit {
   display: none;
+}
+
+@media screen and (max-width: 1199px) {
+  .form-item-lastname-firstname input, .form-item-email input, .form-item-telephone input {
+    width: 165px;
+  }
+  #edit-total-area {
+    padding: 5px 25px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+
+  .form-item-county {
+    margin-right: 2.6em;
+  }
+
+  .form-item-housing-type {
+    margin-top: 1em !important;
+  }
+
+  #edit-room-type-section {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+  }
+
+  #edit-attic-section {
+    margin-right: 0;
+    margin-bottom: 2em;
+  }
+
+  #edit-bottom {
+    margin-top: 3em !important;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-item-total-area {
+    margin-right: -3.2em;
+    margin-bottom: 2em !important;
+  }
+
+  #edit-contact {
+    margin-left: 25%;
+    margin-right: 25%;
+    flex-flow: column;
+    align-items: flex-start;
+    text-align: center;
+    flex-flow: column;
+    padding-left: 6em;
+    text-align: left;
+  }
+
+  #edit-contact input {
+    display: block;
+  }
+
+  #edit-gender-male, #edit-gender-female {
+    display: inline-block !important;
+  }
+
+  #edit-gender {
+    display: block;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+  #edit-contact {
+    padding-left: 3.5em;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #edit-contact {
+    padding-left: 3.4em;
+  }
+}
+
+@media screen and (max-width: 560px) {
+
+}
+
+@media screen and (max-width: 540px) {
+  #edit-contact {
+    padding-left: 8%;
+  }
+}
+
+@media screen and (max-width: 496px) {
+  #edit-contact {
+    padding-left: 8%;
+  }
+  #edit-region {
+    display: inline-flex;
+  }
+}
+
+@media screen and (max-width: 492px) {
+  #edit-contact {
+    padding-left: 8%;
+  }
+  #edit-region {
+    display: inline-flex;
+  }
+
+  #edit-revenus-fiscaux {
+    align-items: center;
+  }
+
+  #edit-number-person, #edit-fiscal-brackets {
+    width: 95%!important;
+  }
+
+  .form-item-number-person, .form-item-fiscal-brackets {
+    display: grid;
+  }
+
+  .form-item-fiscal-brackets {
+    margin-right: 20%;
+  }
+
+  #edit-total-area, #edit-heating-type {
+    display: block;
+    margin: auto;
+  }
+
+  .form-item-total-area {
+    margin-right: -1em;
+  }
+
+}
+
+@media screen and (max-width: 476px) {
+  #edit-contact {
+    padding-left: 7%;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  #edit-contact {
+    padding-left: 6%;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  #edit-contact {
+    padding-left: 5%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  #edit-contact {
+    padding-left: 4%;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  #edit-contact {
+    padding-left: 3%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #edit-contact {
+    padding-left: 3%;
+  }
+}
+
+@media screen and (max-width: 395px) {
+  #edit-contact {
+    padding-left: 2%;
+  }
+}
+
+@media screen and (max-width: 385px) {
+  #edit-contact {
+    padding-left: 1.7%;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  #edit-contact {
+    padding-left: 1.7%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+
+  #edit-region {
+    display: block;
+  }
+
+  .form-item-attic-type {
+    display: contents;
+  }
+
+  #edit-housing-type {
+    display: block;
+  }
+
+  #edit-contact {
+    padding: 2em 4.5em;
+    margin: 0;
+  }
+
+  #edit-revenus-fiscaux input#edit-number-person {
+    width: 90.5%;
+    display: block;
+  }
+
+  #edit-revenus-fiscaux input#edit-fiscal-brackets {
+    width: 100%;
+  }
+
+  .form-item-fiscal-brackets {
+    text-align: left;
+  }
+
+  #edit-attic-type {
+    display: flex;
+  }
+
+  .form-item-region label[for="edit-region-notidf"] {
+    margin-left: 1%;
+  }
+
+  #edit-other-room {
+    display: flex;
+  }
+
+  .form-item-county {
+    margin-right: 0;
+  }
+  .form-item-heating-type label {
+    display: block;
+  }
+
+  .form-item-housing-type label {
+    padding: 0;
+  }
+
+  #edit-other-room label {
+    display: block;
+  }
+
+  .form-item-total-area {
+    width: 100%;
+  }
+
 }
 
 /*
