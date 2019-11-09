@@ -29,27 +29,6 @@
         $('#edit-not-eligible, #edit-eligible').hide();
         $('.field-requ-mess').remove();
 
-        var requiredElements = [
-          'county',
-          'housing_type',
-          'total_area',
-          'heating_type',
-        ];
-        var roomType = [
-          'attics',
-          'cave',
-          'garage',
-          'crawl_space'
-        ];
-        var atticsRequired = [
-          'attic_type',
-        ];
-        var atticLostRequired = [
-          'region',
-          'number_person',
-          'fiscal_brackets'
-        ];
-
         // Type de logement.
         if (data.keys.indexOf('housing_type') !== -1) {
 
