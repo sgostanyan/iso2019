@@ -40,8 +40,8 @@
       // Functions
       function checkDataValidation() {
         var formData = $('.iso2019-forms form').serializeArray();
-        console.log(formData);
         var data = formatData(formData);
+
         $('#edit-not-eligible, #edit-eligible').hide();
         $('.field-requ-mess').remove();
 
@@ -102,8 +102,8 @@
                   else {
                     var result = formData[data.indexKeys.fiscal_brackets].value === 'ok';
                     var message = !result ? 'vos revenus dépassent le plafond autorisé pour les combles perdus.' : '';
-                    eligible(result, message);
                     if (!result) {
+                      eligible(result, message);
                       return;
                     }
 
@@ -116,22 +116,18 @@
 
               // Si pas de surface total.
               if (formData[data.indexKeys.total_area].value === '') {
-                eligible(false, 'Vous devez renseigner la surface totale à isoler.');
+                messenger('Vous devez renseigner la surface totale à isoler');
                 return;
               }
 
               // Si pas de type de chauffage.
               if (formData[data.indexKeys.heating_type].value === '') {
-                eligible(false, 'Vous devez renseigner le type de chauffage.');
+                messenger('Vous devez renseigner le type de chauffage');
                 return;
               }
 
-              // Si autres type de pièce.
-              if (data.keys.indexOf('garage') !== -1 ||
-                data.keys.indexOf('cave') !== -1 ||
-                data.keys.indexOf('crawl_space') !== -1) {
-                eligible(true);
-              }
+              // Tous les autres cas.
+              eligible(true);
             }
           }
         }
