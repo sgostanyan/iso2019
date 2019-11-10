@@ -1,0 +1,77 @@
+uuid: 38c23e42-ab5e-4ed0-90e8-8661c6215ccb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.page.field_chapo
+    - field.field.node.page.field_form_title
+    - field.field.node.page.field_forms
+    - node.type.page
+  module:
+    - field_formatter_class
+    - field_group
+    - text
+    - user
+    - webform
+third_party_settings:
+  field_group:
+    group_title_wrapper:
+      children:
+        - field_form_title
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      format_settings:
+        label: 'Title wrapper'
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: form-title-wrapper
+      label: 'Title wrapper'
+_core:
+  default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  field_chapo:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: iso2019-form-chapo
+    type: text_default
+    region: content
+  field_form_title:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      field_formatter_class:
+        class: iso2019-form-title
+    type: string
+    region: content
+  field_forms:
+    weight: 4
+    label: hidden
+    settings:
+      source_entity: false
+    third_party_settings:
+      field_formatter_class:
+        class: iso2019-forms
+    type: webform_entity_reference_entity_view
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

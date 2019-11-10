@@ -120,7 +120,7 @@ label {
   font-size: medium !important;
 }
 
-#edit-housing-type label, #edit-region label {
+#edit-housing-type label {
   font-weight: initial !important;
 }
 
@@ -354,17 +354,11 @@ label {
   #edit-contact {
     padding-left: 8%;
   }
-  #edit-region {
-    display: inline-flex;
-  }
 }
 
 @media screen and (max-width: 492px) {
   #edit-contact {
     padding-left: 8%;
-  }
-  #edit-region {
-    display: inline-flex;
   }
 
   #edit-revenus-fiscaux {
@@ -454,10 +448,6 @@ label {
 
 @media screen and (max-width: 360px) {
 
-  #edit-region {
-    display: block;
-  }
-
   .form-item-attic-type {
     display: contents;
   }
@@ -486,10 +476,6 @@ label {
 
   #edit-attic-type {
     display: flex;
-  }
-
-  .form-item-region label[for="edit-region-notidf"] {
-    margin-left: 1%;
   }
 
   #edit-other-room {

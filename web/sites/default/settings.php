@@ -779,3 +779,4 @@ $settings['entity_update_backup'] = TRUE;
  }
 
 $config_directories['sync'] = '../config/sync';
+$config_directories['active'] = '../config/active';

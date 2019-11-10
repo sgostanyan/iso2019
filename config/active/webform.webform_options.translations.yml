@@ -1,0 +1,14 @@
+uuid: e2dfd288-af1e-496b-8eaa-ace7370a99b1
+langcode: fr
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: Mb_L3vE-0IBZH5s2rjpk2LNn0QHClQP9AARQdCmVLt4
+id: translations
+label: Traductions
+category: Langue
+likert: false
+options: ''

@@ -6,11 +6,6 @@
       $('.form-item-attics label').once().append('<span data-toggle="tooltip" data-placement="right" title="Les combles perdus sont des combles non aménageables et non habitables." class="Tooltip"><img src="modules/custom/iso2019_global/images/infobulle.png" alt=""></span>');
       $('.Tooltip').tooltip();
 
-      // Click on next step.
-      $('.next-step').once().click(function () {
-        checkDataValidation();
-      });
-
       // Phone field validate.
       $('#edit-telephone').once().change(function () {
         $('.phone-mess').remove();
@@ -21,6 +16,27 @@
         $('#edit-actions-submit').removeAttr('disabled');
       });
 
+      // Manage fiscal brackets by county and number persons.
+
+      $('#edit-county, #edit-number-person').bind('keyup mouseup change', function () {
+        var county = $('#edit-county').val();
+        var numbPerson = $('#edit-number-person').val();
+        if (county && numbPerson && numbPerson != 0) {
+          var amount = calculateFiscalCeiling(county, numbPerson);
+          $('label[for="edit-fiscal-brackets-ok"]').html('inférieur à ' + amount);
+          $('label[for="edit-fiscal-brackets-nok"]').html('supérieur à ' + amount);
+          $('.form-item-fiscal-brackets').show();
+        }
+        else {
+          $('.form-item-fiscal-brackets').hide();
+        }
+      });
+
+      // Click on next step.
+      $('.next-step').once().click(function () {
+        checkDataValidation();
+      });
+
       // Functions
       function checkDataValidation() {
         var formData = $('.iso2019-forms form').serializeArray();
@@ -29,12 +45,17 @@
         $('#edit-not-eligible, #edit-eligible').hide();
         $('.field-requ-mess').remove();
 
+        if (!formData[data.indexKeys.county].value) {
+          messenger('Voir devez choisir un département');
+          return;
+        }
+
         // Type de logement.
         if (data.keys.indexOf('housing_type') !== -1) {
 
           // Si logement appartement.
           if (formData[data.indexKeys.housing_type].value === 'appartment') {
-            eligible(false);
+            eligible(false, 'les appartements ne sont pas inclus dans l\'offre.');
             return;
           }
 
@@ -63,7 +84,7 @@
 
                 // Si type de combles aménagés.
                 else if (formData[data.indexKeys.attic_type].value === 'inhabited') {
-                  eligible(false);
+                  eligible(false, 'les combles aménagés ne sont pas inclus dans l\'offre.');
                   return;
                 }
 
@@ -71,25 +92,38 @@
                 else if (formData[data.indexKeys.attic_type].value === 'lost') {
 
                   // Si pas de renseignement sur les revenus fiscaux.
-                  if (data.keys.indexOf('region') === -1 ||
-                    formData[data.indexKeys.number_person].value === '' ||
-                    formData[data.indexKeys.fiscal_brackets].value === '') {
+                  if (formData[data.indexKeys.number_person].value === '' ||
+                    data.keys.indexOf('fiscal_brackets') === -1) {
                     messenger('Vous devez renseigner tous les champs pour vos combles perdus');
                     return;
                   }
 
-                  // Calcul de l'éligibilité.
+                  // Calcul de l'éligibilité fiscal.
                   else {
-                    var region = formData[data.indexKeys.region].value;
-                    var numbPerson = formData[data.indexKeys.number_person].value;
-                    var fiscalBrackets = formData[data.indexKeys.fiscal_brackets].value;
-                    var result = calculateFiscalEligibility(region, numbPerson, fiscalBrackets);
-                    eligible(result);
+                    var result = formData[data.indexKeys.fiscal_brackets].value === 'ok';
+                    var message = !result ? 'vos revenus dépassent le plafond autorisé pour les combles perdus.' : '';
+                    eligible(result, message);
+                    if (!result) {
+                      return;
+                    }
+
                   }
                 }
               }
               else {
                 $('#edit-attic-section input').removeAttr('required');
+              }
+
+              // Si pas de surface total.
+              if (formData[data.indexKeys.total_area].value === '') {
+                eligible(false, 'Vous devez renseigner la surface totale à isoler.');
+                return;
+              }
+
+              // Si pas de type de chauffage.
+              if (formData[data.indexKeys.heating_type].value === '') {
+                eligible(false, 'Vous devez renseigner le type de chauffage.');
+                return;
               }
 
               // Si autres type de pièce.
@@ -112,10 +146,21 @@
         $('#edit-next-step-button').append('<div class="field-requ-mess" style="color: red; font-weight: bold">' + message + '</div>');
       }
 
-      function eligible(status) {
+      function eligible(status, message) {
+
         $('.field-requ-mess').remove();
-        $('#edit-not-eligible, #edit-eligible').hide();
-        status ? $('#edit-eligible').show() : $('#edit-not-eligible').show();
+        var notEligible = $('#edit-not-eligible');
+        var eligible = $('#edit-eligible');
+        notEligible.hide();
+        eligible.hide();
+
+        if (!status) {
+          var messElement = notEligible.find('p');
+          var text = messElement.html();
+          notEligible.html('Désolé, vous n\'êtes pas éligible: ' + message);
+        }
+
+        status ? eligible.show() : notEligible.show();
         status ? $('#edit-contact').css('display', 'flex') : $('#edit-contact').hide();
         status ? $('#edit-actions-submit').show() : $('#edit-actions-submit').hide();
       }
@@ -131,7 +176,10 @@
         return {'keys': keys, 'indexKeys': indexKeys};
       }
 
-      function calculateFiscalEligibility(region, numberPersons, income) {
+      function calculateFiscalCeiling(region, numberPersons) {
+
+        var idf = ['75', '77', '78', '91', '92', '93', '94', '95'];
+        region = idf.indexOf(region) !== -1 ? 'idf' : 'notIdf';
         var incomeCeiling = {
           1: {
             'idf': 24918,
@@ -160,10 +208,10 @@
         };
 
         if (numberPersons >= 1 && numberPersons <= 5) {
-          return income > incomeCeiling[numberPersons][region] ? false : true;
+          return incomeCeiling[numberPersons][region].toLocaleString() + ' euros';
         }
         else if (numberPersons > 5) {
-          return income > incomeCeiling[5][region] + ((numberPersons - 5) * majoration[region]) ? false : true;
+          return (incomeCeiling[5][region] + ((numberPersons - 5) * majoration[region])).toLocaleString() + ' euros';
         }
       }
 
