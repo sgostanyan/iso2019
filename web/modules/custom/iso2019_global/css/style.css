@@ -200,6 +200,10 @@ label, .js-form-type-processed-text p {
   color: red;
 }
 
+#edit-processed-text-intro-form {
+  display: none;
+}
+
 .Tooltip {
   vertical-align: text-bottom;
   margin-left: 5px;

@@ -159,6 +159,7 @@
         status ? eligible.show() : notEligible.show();
         status ? $('#edit-contact').css('display', 'flex') : $('#edit-contact').hide();
         status ? $('#edit-actions-submit').show() : $('#edit-actions-submit').hide();
+        status ? $('#edit-processed-text-intro-form').show() : $('#edit-processed-text-intro-form').hide();
       }
 
       function formatData(formData) {
