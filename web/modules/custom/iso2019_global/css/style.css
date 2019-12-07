@@ -8,9 +8,6 @@ body {
   background-size: cover;
   background-position-x: center;
 }
-.social-media {
-  display: none!important;
-}
 
 .navbar-default {
   background-color: #272727 !important;
