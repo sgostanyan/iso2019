@@ -262,6 +262,20 @@ label, .js-form-type-processed-text p {
   display: none;
 }
 
+.copyright .container .row .col-sm-6.col-md-6, .footer-menu .container .row .col-sm-6.col-md-6 {
+  width: 100%;
+  text-align: center;
+}
+
+.region-footer-menu .menu {
+  text-align: center;
+  display: flex;
+}
+
+.footer-menu nav li {
+  flex: auto;
+}
+
 @media screen and (max-width: 1199px) {
   .form-item-lastname-firstname input, .form-item-email input, .form-item-telephone input {
     width: 165px;
