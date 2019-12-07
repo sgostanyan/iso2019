@@ -114,10 +114,14 @@ select#edit-county, #edit-total-area, #edit-heating-type {
   margin-top: 1em;
 }
 
-label {
+label, .js-form-type-processed-text p {
   font-family: serif;
   font-weight: bold !important;
   font-size: medium !important;
+}
+
+.js-form-type-processed-text p {
+  font-size: 18.5px;
 }
 
 #edit-housing-type label {
