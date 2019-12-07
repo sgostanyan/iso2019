@@ -1,0 +1,22 @@
+uuid: 4b474a0d-a87d-4c8b-9aa5-ae0f23208f01
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: contenu
+label: Contenu
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  cceab752-6f7e-4b85-9466-285b652d7f1b:
+    id: node_type
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: node
+    uuid: cceab752-6f7e-4b85-9466-285b652d7f1b
+selection_logic: and
+weight: -5
+relationships: {  }
