@@ -263,8 +263,8 @@ label, .js-form-type-processed-text p {
 }
 
 .copyright {
-  color: #fff;
-  background-color: #3C3B3B;
+  color: #fff!important;
+  background-color: #3C3B3B!important;
 }
 
 .copyright .container .row .col-sm-6.col-md-6, .footer-menu .container .row .col-sm-6.col-md-6 {
