@@ -262,6 +262,11 @@ label, .js-form-type-processed-text p {
   display: none;
 }
 
+.copyright {
+  color: #fff;
+  background-color: #3C3B3B;
+}
+
 .copyright .container .row .col-sm-6.col-md-6, .footer-menu .container .row .col-sm-6.col-md-6 {
   width: 100%;
   text-align: center;
