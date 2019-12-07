@@ -15,10 +15,7 @@ label: Chapô
 description: ''
 required: false
 translatable: false
-default_value:
-  -
-    value: "<p>Isolations à&nbsp;1€ : mon logement est-il éligible ?</p>\r\n"
-    format: basic_html
+default_value: {  }
 default_value_callback: ''
 settings: {  }
 field_type: text_long
