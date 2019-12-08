@@ -23,7 +23,7 @@ body {
 
 .path-frontpage .iso2019-form-chapo p, .path-frontpage .iso2019-form-chapo h1 {
   font-family: 'House A Rama League Night', 'Comic sans MS', 'serif';
-  font-size: 3.8rem;
+  font-size: 4rem;
   display: inline-block;
   color: #333;
 }
@@ -297,7 +297,7 @@ label, .js-form-type-processed-text p {
 @media screen and (max-width: 991px) {
 
   .iso2019-form-chapo p, .iso2019-form-chapo h1 {
-    font-size: 4rem;
+    font-size: 3.8rem;
   }
 
   .form-item-county {
@@ -445,12 +445,22 @@ label, .js-form-type-processed-text p {
 }
 
 @media screen and (max-width: 410px) {
+
+  .iso2019-form-chapo p, .iso2019-form-chapo h1 {
+    font-size: 3.7rem;
+  }
+
   #edit-contact {
     padding-left: 3%;
   }
 }
 
 @media screen and (max-width: 400px) {
+
+  .iso2019-form-chapo p, .iso2019-form-chapo h1 {
+    font-size: 3.7rem;
+  }
+
   #edit-contact {
     padding-left: 3%;
   }
