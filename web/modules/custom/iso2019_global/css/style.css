@@ -429,8 +429,9 @@ label, .js-form-type-processed-text p {
 }
 
 @media screen and (max-width: 440px) {
+
   .iso2019-form-chapo p, .iso2019-form-chapo h1 {
-    font-size: 3rem;
+    font-size: 3rem!important;
   }
 
   #edit-contact {
