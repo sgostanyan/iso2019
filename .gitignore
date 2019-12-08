@@ -4,6 +4,7 @@
 /web/core/
 /web/modules/contrib/
 /web/themes/contrib/
+!/web/themes/contrib/business_responsive_theme/js/jquery.smartmenus.min.js
 /web/profiles/contrib/
 /web/libraries/
 

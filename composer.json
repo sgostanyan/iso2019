@@ -71,6 +71,11 @@
         ]
     },
     "extra": {
+        "patches": {
+            "drupal/business_responsive_theme": {
+                "Notice: Undefined offset: 2": "patches/business_responsive_theme_undefined_offset.patch"
+            }
+        },
         "composer-exit-on-patch-failure": true,
         "patchLevel": {
             "drupal/core": "-p2"
