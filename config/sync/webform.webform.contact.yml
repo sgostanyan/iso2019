@@ -203,15 +203,16 @@ handlers:
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
+      exclude_attachments: false
       html: true
       attachments: false
       twig: false
-      theme_name: ''
       debug: false
       reply_to: ''
       return_path: ''
       sender_mail: ''
       sender_name: ''
+      theme_name: ''
       parameters: {  }
   email_notification:
     id: email
@@ -238,16 +239,18 @@ handlers:
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
+      exclude_attachments: false
       html: true
       attachments: false
       twig: false
-      theme_name: ''
       debug: false
       reply_to: ''
       return_path: ''
       sender_mail: ''
       sender_name: ''
+      theme_name: ''
       parameters: {  }
+variants: {  }
 uuid: 20e0670b-e0c0-45bd-8a46-bc20840a6ae5
 _core:
   default_config_hash: CjLyKc08W5pQDmtIk0iDWmit1eCAlCVJtOzxMdHI51Q
