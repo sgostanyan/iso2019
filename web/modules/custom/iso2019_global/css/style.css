@@ -116,7 +116,8 @@ select#edit-county, #edit-total-area, #edit-heating-type {
 }
 
 label, .js-form-type-processed-text p {
-  font-family: serif;
+  /*font-family: serif;*/
+  font-family: 'Roboto', sans-serif;
   font-weight: bold !important;
   font-size: medium !important;
 }
@@ -206,6 +207,12 @@ label, .js-form-type-processed-text p {
 
 #edit-processed-text-intro-form {
   display: none;
+  margin-bottom: 2em!important;
+}
+
+#edit-processed-text-intro-form p {
+  width: 50%;
+  margin: auto;
 }
 
 .Tooltip {
@@ -283,6 +290,15 @@ label, .js-form-type-processed-text p {
 
 .footer-menu nav li {
   flex: auto;
+}
+
+.slider-caption a {
+  display: none;
+}
+
+.form-item-housing-type {
+  margin-right: -8px;
+  margin-top: 1em!important;
 }
 
 @media screen and (max-width: 1199px) {

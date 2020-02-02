@@ -16,18 +16,18 @@ copyright_text: 'Copyright 2019. Tous droits réservés'
 show_social_icon: 0
 show_credit_link: 0
 show_slideshow: 1
-no_of_slides: '3'
-slide_title_1: 'Drupal 8 zymphonies theme'
-slide_description_1: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since.'
-slide_url_1: '#'
+no_of_slides: '2'
+slide_title_1: 'ISOLEZ VOTRE MAISON POUR SEULEMENT 1 €'
+slide_description_1: "Vos Combles , Cave, Garage et Vide Sanitaire sans avance de frais grâce à la loi Pope\r\nEconomisez jusqu'à 40 % sur vos factures énergétiques"
+slide_url_1: ''
 slide_image_path_1: /images/slider/slide_01.jpg
-slide_title_2: 'Best drupal design & development agency'
-slide_description_2: 'long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
-slide_url_2: '#'
+slide_title_2: 'ISOLEZ VOTRE MAISON POUR SEULEMENT 1 €'
+slide_description_2: "Vos Combles , Cave, Garage et Vide Sanitaire sans avance de frais grâce à la loi Pope\r\nEconomisez jusqu'à 40 % sur vos factures énergétiques"
+slide_url_2: ''
 slide_image_path_2: /images/slider/slide_02.jpg
-slide_title_3: 'Marketing agency'
-slide_description_3: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since.'
-slide_url_3: '#'
+slide_title_3: ''
+slide_description_3: ''
+slide_url_3: ''
 slide_image_path_3: /images/slider/slide_03.jpg
 _core:
   default_config_hash: PWP21nDtR9uKbJemVIYpmCZhslztOQOPHXUWPacsujg
@@ -36,8 +36,10 @@ logo:
   use_default: 1
 favicon:
   use_default: 1
-slide_image_path1: {  }
-slide_image_path2: {  }
+slide_image_path1:
+  - '5'
+slide_image_path2:
+  - '3'
 slide_image_path3: {  }
 slide_image_path4: {  }
 slide_title_4: ''

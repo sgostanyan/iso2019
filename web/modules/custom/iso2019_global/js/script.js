@@ -23,8 +23,8 @@
         var numbPerson = $('#edit-number-person').val();
         if (county && numbPerson && numbPerson != 0) {
           var amount = calculateFiscalCeiling(county, numbPerson);
-          $('label[for="edit-fiscal-brackets-ok"]').html('inférieur à ' + amount);
-          $('label[for="edit-fiscal-brackets-nok"]').html('supérieur à ' + amount);
+          $('label[for="edit-fiscal-brackets-ok"]').html('Inférieur à ' + amount);
+          $('label[for="edit-fiscal-brackets-nok"]').html('Supérieur à ' + amount);
           $('.form-item-fiscal-brackets').show();
         }
         else {
@@ -46,7 +46,7 @@
         $('.field-requ-mess').remove();
 
         if (!formData[data.indexKeys.county].value) {
-          messenger('Voir devez choisir un département');
+          messenger('Vous devez choisir un département');
           return;
         }
 
@@ -101,12 +101,12 @@
                   // Calcul de l'éligibilité fiscal.
                   else {
                     var result = formData[data.indexKeys.fiscal_brackets].value === 'ok';
-                    var message = !result ? 'vos revenus dépassent le plafond autorisé pour les combles perdus.' : '';
+                    var message = !result ? 'Vos revenus dépassent le plafond autorisé pour les combles perdus.' : '';
                     if (!result) {
-                      eligible(result, message);
+                      //eligible(!result, message);
+                      notEligibleBut(message);
                       return;
                     }
-
                   }
                 }
               }
@@ -162,6 +162,17 @@
         status ? $('#edit-processed-text-intro-form').show() : $('#edit-processed-text-intro-form').hide();
       }
 
+      function notEligibleBut(message) {
+        var eligible = $('#edit-eligible');
+        eligible.find('p').text(message);
+        $('#edit-processed-text-intro-form p').text('Tout n\'est pas perdu ! Diverses primes existent pour réduire le coût de vos travaux d\'isolation quel que soit votre niveau de revenu. Laissez-nous vos coordonnées afin que nos conseillers puissent vous contacter et trouver une solution adaptée à votre situation.')
+        eligible.show();
+        $('#edit-contact').css('display', 'flex');
+        $('#edit-actions-submit').show();
+        $('#edit-processed-text-intro-form').show();
+        $('input[name="eligible_status"]').val('Non');
+      }
+
       function formatData(formData) {
         let keys = [];
         let indexKeys = [];
@@ -205,7 +216,7 @@
         };
 
         if (numberPersons >= 1 && numberPersons <= 5) {
-          return incomeCeiling[numberPersons][region].toLocaleString() + ' euros';
+          return incomeCeiling[numberPersons][region].toLocaleString() + ' €';
         }
         else if (numberPersons > 5) {
           return (incomeCeiling[5][region] + ((numberPersons - 5) * majoration[region])).toLocaleString() + ' euros';
@@ -216,7 +227,6 @@
         var reg = new RegExp("^0[1-9]([-. ]?[0-9]{2}){4}$");
         return reg.test(number);
       }
-
     }
   };
 })(jQuery, Drupal);
