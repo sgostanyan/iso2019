@@ -1,0 +1,20 @@
+diff --git a/business_responsive_theme.theme b/business_responsive_theme.theme
+index d4f3208..074a97d 100644
+--- a/business_responsive_theme.theme
++++ b/business_responsive_theme.theme
+@@ -173,7 +173,7 @@ function business_responsive_theme_get_slider_content() {
+       <div class="slider-caption">
+         <h2 class="slider-title">' . theme_get_setting('slide_title_' . $i, 'business_responsive_theme').'</h2>
+         <div class="clearfix"><p class="slider-description">' . theme_get_setting('slide_description_' . $i, 'business_responsive_theme').'</p></div>
+-        <a href=' . theme_get_setting('slide_url_' . $i, 'business_responsive_theme') . ' class="more-link">Read more</a>
++        <a href=' . theme_get_setting('slide_url_' . $i, 'business_responsive_theme') . ' class="more-link">En savoir plus</a>
+       </div>
+     </li>';
+   }
+@@ -329,4 +329,4 @@ function business_responsive_theme_form_system_theme_settings_alter(&$form, \Dru
+   }
+ 
+   
+-}
+\ No newline at end of file
++}

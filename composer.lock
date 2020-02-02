@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ac0ee408aa42a622c47f40af9c6099f",
+    "content-hash": "779112477d0fa9c386278fd0d02c4202",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2241,7 +2241,8 @@
                 },
                 "patches_applied": {
                     "Notice: Undefined offset: 2": "patches/business_responsive_theme_undefined_offset.patch",
-                    "Warning: file_get_contents jquery.smartmenus.min.js No such file or directory": "patches/jquery.smartmenus.min.js.wrong_location.patch"
+                    "Warning: file_get_contents jquery.smartmenus.min.js No such file or directory": "patches/jquery.smartmenus.min.js.wrong_location.patch",
+                    "ReadMore message slider": "patches/business_responsive_theme.read-more-message.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

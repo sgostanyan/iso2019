@@ -75,7 +75,8 @@
         "patches": {
             "drupal/business_responsive_theme": {
                 "Notice: Undefined offset: 2": "patches/business_responsive_theme_undefined_offset.patch",
-                "Warning: file_get_contents jquery.smartmenus.min.js No such file or directory": "patches/jquery.smartmenus.min.js.wrong_location.patch"
+                "Warning: file_get_contents jquery.smartmenus.min.js No such file or directory": "patches/jquery.smartmenus.min.js.wrong_location.patch",
+                "ReadMore message slider": "patches/business_responsive_theme.read-more-message.patch"
             }
         },
         "composer-exit-on-patch-failure": true,
