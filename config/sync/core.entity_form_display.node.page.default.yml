@@ -6,8 +6,12 @@ dependencies:
     - field.field.node.page.field_chapo
     - field.field.node.page.field_form_title
     - field.field.node.page.field_forms
+    - field.field.node.page.field_partners_images
+    - field.field.node.page.field_partners_text
+    - image.style.thumbnail
     - node.type.page
   module:
+    - image
     - path
     - text
     - webform
@@ -20,7 +24,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 6
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -47,6 +51,22 @@ content:
     third_party_settings: {  }
     type: webform_entity_reference_select
     region: content
+  field_partners_images:
+    weight: 6
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_partners_text:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   langcode:
     type: language_select
     weight: 1
@@ -56,7 +76,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 7
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -64,7 +84,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 10
     region: content
     third_party_settings: {  }
   title:
@@ -77,7 +97,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 7
     region: content
     settings:
       match_operator: CONTAINS

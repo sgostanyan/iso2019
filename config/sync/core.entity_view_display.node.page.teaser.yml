@@ -4,6 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.page.field_chapo
+    - field.field.node.page.field_form_title
+    - field.field.node.page.field_forms
+    - field.field.node.page.field_partners_images
+    - field.field.node.page.field_partners_text
     - node.type.page
   module:
     - user
@@ -18,4 +23,9 @@ content:
     weight: 101
     region: content
 hidden:
+  field_chapo: true
+  field_form_title: true
+  field_forms: true
+  field_partners_images: true
+  field_partners_text: true
   langcode: true

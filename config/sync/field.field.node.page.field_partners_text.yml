@@ -1,0 +1,19 @@
+uuid: 332d51fb-b6a1-44ce-abe9-ea8f2275c76b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_partners_text
+    - node.type.page
+id: node.page.field_partners_text
+field_name: field_partners_text
+entity_type: node
+bundle: page
+label: 'Texte des entreprises partenaires'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

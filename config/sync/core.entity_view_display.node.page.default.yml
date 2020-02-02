@@ -6,10 +6,13 @@ dependencies:
     - field.field.node.page.field_chapo
     - field.field.node.page.field_form_title
     - field.field.node.page.field_forms
+    - field.field.node.page.field_partners_images
+    - field.field.node.page.field_partners_text
     - node.type.page
   module:
     - field_formatter_class
     - field_group
+    - image
     - text
     - user
     - webform
@@ -22,7 +25,6 @@ third_party_settings:
       weight: 2
       format_type: html_element
       format_settings:
-        label: 'Title wrapper'
         element: div
         show_label: false
         label_element: h3
@@ -33,6 +35,25 @@ third_party_settings:
         classes: form-title-wrapper
       label: 'Title wrapper'
       region: content
+    group_partners:
+      children:
+        - field_partners_text
+        - field_partners_images
+      parent_name: ''
+      weight: 4
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: partners
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Partenaires
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
 id: node.page.default
@@ -60,7 +81,7 @@ content:
     type: string
     region: content
   field_forms:
-    weight: 4
+    weight: 3
     label: hidden
     settings:
       source_entity: false
@@ -68,6 +89,27 @@ content:
       field_formatter_class:
         class: iso2019-forms
     type: webform_entity_reference_entity_view
+    region: content
+  field_partners_images:
+    weight: 6
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings:
+      field_formatter_class:
+        class: partners-images
+    type: image
+    region: content
+  field_partners_text:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      field_formatter_class:
+        class: partners-text
+    type: string
     region: content
   links:
     weight: 0

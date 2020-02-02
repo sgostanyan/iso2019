@@ -101,6 +101,7 @@ select#edit-county, #edit-total-area, #edit-heating-type {
 #edit-attic-section, #edit-other-room, #edit-contact {
   background-color: #f5f9fa;
   border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
   padding: 1em;
 }
 
@@ -292,13 +293,41 @@ label, .js-form-type-processed-text p {
   flex: auto;
 }
 
-.slider-caption a {
-  display: none;
-}
-
 .form-item-housing-type {
   margin-right: -8px;
   margin-top: 1em!important;
+}
+
+.partners {
+  background-color: white;
+  padding-bottom: 1em;
+}
+
+.partners-text {
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 1em;
+  padding-bottom: 2em;
+}
+
+.partners-images {
+  display: flex;
+}
+
+.partners-images img{
+  width: 60%;
+  height: auto;
+}
+
+.partners-images div:first-child {
+  margin-left: 7em;
+}
+
+.partners-images div:last-child {
+  margin-right: 7em;
+
 }
 
 @media screen and (max-width: 1199px) {
